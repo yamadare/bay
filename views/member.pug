@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div.member-bg
+    main
+      div.member-contents
+        div.member-box.member-box__sax
+          h1 SAX
+          div.member-contents__list
+            - var list = member
+            each item, index in list
+              span.member-contents__list-item
+                img(src=item.image)
+                p #{item.name}
+

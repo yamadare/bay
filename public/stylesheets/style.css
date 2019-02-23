@@ -1,25 +1,6 @@
-*, *::after, *::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.6rem;
-  font-family: "Roboto", sans-serif;
-  color: #3d3536;
-  background-color: white;
-  width: 100vw;
-  height: 100vh;
-}
-
-img {
-  max-width: 100vw;
-}
-
+/**
+* MAIN_PAGE_STYLE!!!
+*/
 img.main_image {
   position: relative;
 }
@@ -29,8 +10,8 @@ img.logo {
 }
 
 
-a {
-  color: #333333;
+a.nav {
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -40,18 +21,18 @@ a {
   left: 0;
   width: 100%;
   height: 50px;
-  background: rgba(255, 255, 255, 0.95);
-  /* -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); */
-          /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); */
+  background: rgba(51, 51, 51, 0.90);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   z-index: 3;
 }
 
 /* clearfix */
-/* .cd-main-header:after {
+.cd-main-header:after {
   content: "";
   display: table;
   clear: both;
-} */
+}
 
 .cd-main-header__logo {
   float: left;
@@ -64,7 +45,6 @@ a {
 }
 
 span.nav-item {
-  color: #333333;
   font-size: 2rem;
   margin: 5px;
 }
@@ -180,8 +160,8 @@ span.nav-item {
   -webkit-transform: translateX(-50%) translateY(-50%);
       -ms-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
-  /* width: 90%; */
-  /* max-width: 1170px; */
+  width: 90%;
+  max-width: 1170px;
   margin: 0 auto;
   text-align: center;
   font-size: 3rem;
@@ -220,7 +200,6 @@ span.nav-item {
     font-weight: 300;
   }
   @supports (background-attachment: fixed) {
-    /* fix bug on IE11 and below */
     .cd-fixed-bg {
       background-attachment: fixed;
     }
@@ -232,8 +211,6 @@ span.nav-item {
   min-height: 100%;
   padding: 4em 0;
   line-height: 1.6;
-  /* -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
-          /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
   z-index: 2;
 }
 
@@ -266,4 +243,31 @@ span.nav-item {
     line-height: 2;
     font-weight: 300;
   }
+}
+
+/**
+* MEMBER_PAGE_STYLE !!!!
+*/
+.member-bg {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../images/member-bg.jpg');
+  background-size: contain;
+
+}
+
+.member-contents {
+  color: white
+}
+
+.member-box{
+  background-color: #333333
+}
+
+.member-box__sax{
+  padding-top: 10rem;
+}
+
+.member-contents__list {
+  display: inline-block;
 }
