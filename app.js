@@ -53,9 +53,17 @@ app.get('/api/getAllMember', (req, res) => {
   })
 })
 // 対象メンバー取得
-app.get('/api/getMember', (req, res) => {
+app.get('/api/getMember/:id', (req, res) => {
   const mId = req.params.id
   connection.query('SELECT * FROM members WHERE id = ?', [mId], (err, results) => {
+    if (err) res.json({status: false, result: {}})
+    res.json({status: true, result: results})
+  })
+})
+// 対象ニュース取得
+app.get('/api/getNews', (req, res) => {
+  const mId = req.params.id
+  connection.query('SELECT * FROM news', (err, results) => {
     if (err) res.json({status: false, result: {}})
     res.json({status: true, result: results})
   })
