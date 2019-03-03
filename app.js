@@ -45,11 +45,19 @@ app.use('/movies/:id', movieDescRouter)
 /**
  * API
  */
-// メンバー取得
+// 全メンバー取得
 app.get('/api/getAllMember', (req, res) => {
-  connection.query('SELECT * FROM members', (err, results) => {
-    if (err) throw err
-    res.json({status: true, members: results})
+  connection.query('SELECT id, name FROM members', (err, results) => {
+    if (err) res.json({status: false, result: {}})
+    res.json({status: true, result: results})
+  })
+})
+// 対象メンバー取得
+app.get('/api/getMember', (req, res) => {
+  const mId = req.params.id
+  connection.query('SELECT * FROM members WHERE id = ?', [mId], (err, results) => {
+    if (err) res.json({status: false, result: {}})
+    res.json({status: true, result: results})
   })
 })
 
